@@ -22,6 +22,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "audio_application.h"
 #include "TLV320ADC.h"
+#include "arm_math.h"
 /** @addtogroup X_CUBE_MEMSMIC1_Applications
 * @{
 */ 
@@ -69,6 +70,7 @@ CCA02M2_AUDIO_Init_t MicParams;
 void CCA02M2_AUDIO_IN_HalfTransfer_CallBack(uint32_t Instance)
 {  
   UNUSED(Instance);
+
   AudioProcess();
 }
 
@@ -94,11 +96,8 @@ void CCA02M2_AUDIO_IN_TransferComplete_CallBack(uint32_t Instance)
 
 void AudioProcess(void)
 {
-//  if (CCA02M2_AUDIO_IN_PDMToPCM(CCA02M2_AUDIO_INSTANCE,(uint16_t * )PDM_Buffer,PCM_Buffer) != BSP_ERROR_NONE)
-//  {
-//    Error_Handler();
-//  }
-  Send_Audio_to_USB((int16_t *)PCM_Buffer, (AUDIO_IN_SAMPLING_FREQUENCY/1000)*AUDIO_IN_CHANNELS * N_MS );
+
+	Send_Audio_to_USB((int16_t *)PCM_Buffer, (AUDIO_IN_SAMPLING_FREQUENCY/1000)*AUDIO_IN_CHANNELS * N_MS );
 }
 
 /**
@@ -109,6 +108,8 @@ void AudioProcess(void)
 * @param  none
 * @retval None
 */
+
+
 void Init_Acquisition_Peripherals(uint32_t AudioFreq, uint32_t ChnlNbrIn, uint32_t ChnlNbrOut)
 {  
   MicParams.BitsPerSample = 16;

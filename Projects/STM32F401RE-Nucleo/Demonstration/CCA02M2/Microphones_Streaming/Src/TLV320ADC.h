@@ -80,8 +80,8 @@ void MX_DMA_Init(void);
 
 
 #define  R0x33_1            0x20 //0b01000000  2V MICBIAS Control
-#define  R0x3B_1			0x50 //Left Analog PGA Seeting = 0dB 01010000
-#define  R0x3C_1  			0x50 //Right Analog PGA Seeting = 0dB 01010000
+#define  R0x3B_1			0x28 //Left Analog PGA Seeting = 0dB 01010000
+#define  R0x3C_1  			0x28 //Right Analog PGA Seeting = 0dB 01010000
 #define  R0x34_1  			0xF3 //Left ADC Input selection for Left PGA = IN1L(P) as Single-Ended
 #define  R0x36_1  			0x7F //Register 54: Left ADC Input Selection for Left PGA 00111111
 #define  R0x37_1  			0xCF //Right ADC Input selection for Right PGA = IN1R(M) as Single-Ended

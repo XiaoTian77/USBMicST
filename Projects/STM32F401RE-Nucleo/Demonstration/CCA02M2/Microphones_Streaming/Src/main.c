@@ -20,6 +20,7 @@
   */
 
 
+
 /* Includes ------------------------------------------------------------------*/
 #include "cube_hal.h"
 #include <stdbool.h>
@@ -108,7 +109,7 @@ int main(void)
   /* Start audio acquisition and streaming */
 #ifdef DISABLE_USB_DRIVEN_ACQUISITION
   Init_Acquisition_Peripherals(AUDIO_IN_SAMPLING_FREQUENCY, AUDIO_IN_CHANNELS, 0);
-  MX_I2S2_Init();
+  //MX_I2S2_Init();
   Start_Acquisition();
 #endif
   
