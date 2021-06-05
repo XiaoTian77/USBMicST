@@ -97,6 +97,8 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 void ADC_init();
 void ADC_start();
 void DMA_ADC();
+void fir_init(void);
+void fir_process(int16_t* inbuff, int16_t* outbuff, size_t size);
 
 
 #endif /* INC_TLV320ADC_H_ */
